@@ -1,0 +1,15 @@
+---
+const { url, name } = Astro.props
+
+interface Props {
+    url: string;
+    name: string;
+}
+---
+
+<a href={url}
+data-astro-prefetch
+class=""
+>
+    {name}
+</a>
