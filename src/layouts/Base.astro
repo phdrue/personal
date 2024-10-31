@@ -34,9 +34,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <title>{SITE_TITLE}</title>
     <meta name="title" content={SITE_TITLE} />
     <meta name="description" content={SITE_DESCRIPTION} />
+
+    <!-- <script>
+      import "../assets/scripts/lenisSmoothScroll";
+    </script> -->
   </head>
 
-  <body class="bg-[#fffdf1]">
+  <body class="bg-primary_bg text-primary selection:bg-pink-600 selection:text-primary_bg scrollbar-hide lenis lenis-smooth scroll-pt-16   [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:rounded-full
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:rounded-full
+  [&::-webkit-scrollbar-thumb]:bg-gray-300">
     <main class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 h-[2000px]">
       <Header />
       <article class="prose mx-auto lg:prose-xl">
