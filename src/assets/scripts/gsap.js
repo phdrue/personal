@@ -27,7 +27,7 @@ gsap.to("#car", {
     trigger: "#car",
     start: "top center",
     scrub: 1,
-    markers: true,
+    // markers: true,
   }, // start the animation when ".box" enters the viewport (once)
   x: "250%",
   duration: 6,
