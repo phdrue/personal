@@ -8,6 +8,15 @@ export default {
       colors: {
         primary: '#1E1A1B',
         primary_bg: '#fffdf1'
+      },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-2deg)' },
+          '50%': { transform: 'rotate(2deg)' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 4s ease-in-out infinite',
       }
     },
   },

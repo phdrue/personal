@@ -9,7 +9,15 @@ interface Props {
 
 <a
   href={url}
-  class="text-sm flex items-center gap-1 font-medium focus:outline-none sm:text-base before:flex before:size-[4px] before:rounded-full before:bg-primary group"
+  class="text-sm flex items-center gap-1 font-medium focus:outline-none sm:text-base first:before:hidden before:flex before:size-[4px] before:rounded-full before:bg-primary group"
 >
-  <span class:list={[ 'group-hover:bg-primary group-hover:text-primary_bg group-hover:px-4 rounded-full px-3 py-1.5 transition-all duration-300', { 'bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 bg-clip-text text-transparent group-hover:bg-clip-border': name === 'Inspo' } ]}>{name}</span>
+  <span
+    class:list={[
+      "group-hover:bg-primary group-hover:text-primary_bg group-hover:px-4 rounded-full px-3 py-1.5 transition-all duration-300",
+      {
+        "bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 bg-clip-text text-transparent group-hover:bg-clip-border":
+          name === "Inspo",
+      },
+    ]}>{name}</span
+  >
 </a>
