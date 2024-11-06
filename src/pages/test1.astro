@@ -5,10 +5,10 @@ import Tablet from "../components/Tablet.astro";
 ---
 
 <Base>
-  <!-- <StartOverlay /> -->
+  <StartOverlay />
 
   <div class="space-y-20 mx-[6%] lg:mx-0 my-24">
-    <Tablet img_path="/img/1.jpg" translate="">
+    <Tablet id="tablet-1" img_path="/img/1.jpg" translate="">
       <p
         slot="title_slot"
         class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
@@ -18,9 +18,9 @@ import Tablet from "../components/Tablet.astro";
       </p>
     </Tablet>
 
-    <Tablet
+    <Tablet id="tablet-2"
       img_path="/img/2.jpg"
-      translate="md:translate-x-[8%] xl:translate-x-[16%]"
+      translate="translate-x-0 md:translate-x-[8%] xl:translate-x-[16%]"
     >
       <p
         slot="title_slot"
@@ -31,9 +31,22 @@ import Tablet from "../components/Tablet.astro";
       </p>
     </Tablet>
 
-    <Tablet
+    <Tablet id="tablet-3"
       img_path="/img/3.jpg"
-      translate="md:-translate-x-[6%] xl:-translate-x-[14%]"
+      translate="translate-x-0 md:-translate-x-[6%] xl:-translate-x-[14%]"
+    >
+      <p
+        slot="title_slot"
+        class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
+      >
+        <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
+
+    <Tablet id="tablet-4"
+      img_path="/img/4.jpg"
+      translate="translate-x-0 md:translate-x-[4%] xl:translate-x-[12%]"
     >
       <p
         slot="title_slot"
@@ -45,8 +58,9 @@ import Tablet from "../components/Tablet.astro";
     </Tablet>
 
     <Tablet
-      img_path="/img/4.jpg"
-      translate="md:translate-x-[4%] xl:translate-x-[12%]"
+      id="tablet-5"
+      img_path="/img/album.png"
+      translate="translate-x-0 md:translate-x-[4%] xl:translate-x-[12%]"
     >
       <p
         slot="title_slot"

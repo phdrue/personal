@@ -1,3 +1,4 @@
+import { escapeHTML } from "astro/runtime/server/escape.js";
 import { gsap } from "gsap";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -21,6 +22,92 @@ gsap.registerPlugin(TextPlugin);
 // });
 // tl.to("#car", { x: "250%", duration: 6 });
 // tl.to("#car", { rotation: 5, duration: 2, repeat: 3, yoyo: true, ease: 'back' });
+
+let tablet1 = gsap.fromTo(
+  "#tablet-1",
+  {
+    opacity: 0,
+    translateY: "50%"
+  },
+  {
+    scrollTrigger: {
+      trigger: "#tablet-1",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 1,
+    translateY: 0,
+    duration: 1.2,
+    clearProps: true,
+    // ease: "power1.out"
+  }
+);
+let tablet2 = gsap.fromTo(
+  "#tablet-2",
+  { opacity: 0, translateY: "50%" },
+  {
+    scrollTrigger: {
+      trigger: "#tablet-2",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 1,
+    translateY: 0,
+    duration: 1.2,
+    clearProps: true,
+    // ease: "power1.out"
+  }
+);
+let tablet3 = gsap.fromTo(
+  "#tablet-3",
+  { opacity: 0, translateY: "50%" },
+  {
+    scrollTrigger: {
+      trigger: "#tablet-3",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 1,
+    translateY: 0,
+    duration: 1.2,
+    clearProps: true,
+    // ease: "power1.out"
+  }
+);
+let tablet4 = gsap.fromTo(
+  "#tablet-4",
+  { opacity: 0, translateY: "50%" },
+  {
+    scrollTrigger: {
+      trigger: "#tablet-4",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 1,
+    translateY: 0,
+    duration: 1.2,
+    clearProps: true,
+    // ease: "power1.out"
+  }
+);
+let tablet5 = gsap.fromTo(
+  "#tablet-5",
+  { opacity: 0, translateY: "50%" },
+  {
+    scrollTrigger: {
+      trigger: "#tablet-5",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 1,
+    translateY: 0,
+    duration: 1.2,
+    clearProps: true,
+    // ease: "power1.out"
+  }
+);
+
+// animation.kill([tablet1, tablet2, tablet3, tablet4, tablet5], "transform,translate");
 
 gsap.to("#car", {
   scrollTrigger: {
@@ -63,16 +150,20 @@ var tl = gsap.timeline();
 tl.to("#start-overlay-text-container", {
   rotate: 0,
   duration: 1.8,
-  ease: ease
-});
-tl.to("#start-overlay-span-1", {
-  y: "-100%",
-  rotate: 0,
-  duration: 0.8,
-  opacity: 1,
-  delay: 0.6,
   ease: ease,
-}, "<");
+});
+tl.to(
+  "#start-overlay-span-1",
+  {
+    y: "-100%",
+    rotate: 0,
+    duration: 0.8,
+    opacity: 1,
+    delay: 0.6,
+    ease: ease,
+  },
+  "<"
+);
 tl.to(
   "#start-overlay-span-2",
   {
@@ -109,7 +200,7 @@ tl.to(
 
 tl.to("#start-overlay-black", {
   opacity: 0,
-  duration: 0.1
+  duration: 0.1,
 });
 
 tl.to("#start-overlay-span-1", {
