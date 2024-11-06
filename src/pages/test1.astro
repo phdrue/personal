@@ -1,75 +1,60 @@
 ---
 import Base from "../layouts/Base.astro";
 import StartOverlay from "../components/StartOverlay.astro";
+import Tablet from "../components/Tablet.astro";
 ---
 
 <Base>
-  <StartOverlay></StartOverlay>
+  <!-- <StartOverlay /> -->
 
-  <div class="w-full flex flex-col items-center gap-24">
-
-    <div class="space-y-4 flex flex-col items-center">
-      <div
-        class="shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/9)] h-48 md:h-64 lg:h-[340px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+  <div class="space-y-20 mx-[6%] lg:mx-0 my-24">
+    <Tablet img_path="/img/1.jpg" translate="">
+      <p
+        slot="title_slot"
+        class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
       >
-        <div
-          class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
-        >
-          <img src="/img/1.jpg" alt="1" class="absolute inset-0 size-full" />
-        </div>
-      </div>
-      <p class="font-medium max-w-[341px] md:max-w-none">
         <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on
         conversational AI
       </p>
-    </div>
+    </Tablet>
 
-    <div class="space-y-4 lg:translate-x-[40%] flex flex-col items-center">
-      <div
-        class="shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/9)] h-48 md:h-64 lg:h-[340px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+    <Tablet
+      img_path="/img/2.jpg"
+      translate="md:translate-x-[8%] xl:translate-x-[16%]"
+    >
+      <p
+        slot="title_slot"
+        class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
       >
-        <div
-          class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
-        >
-          <img src="/img/2.jpg" alt="1" class="absolute inset-0 size-full" />
-        </div>
-      </div>
-      <p class="font-medium max-w-[341px] md:max-w-none">
         <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on
         conversational AI
       </p>
-    </div>
+    </Tablet>
 
-    <div class="lg:-translate-x-[50%] space-y-4 flex flex-col items-center">
-      <div
-        class="shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/9)] h-48 md:h-64 lg:h-[340px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+    <Tablet
+      img_path="/img/3.jpg"
+      translate="md:-translate-x-[6%] xl:-translate-x-[14%]"
+    >
+      <p
+        slot="title_slot"
+        class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
       >
-        <div
-          class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
-        >
-          <img src="/img/3.jpg" alt="1" class="absolute inset-0 size-full" />
-        </div>
-      </div>
-      <p class="font-medium max-w-[341px] md:max-w-none">
         <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on
         conversational AI
       </p>
-    </div>
+    </Tablet>
 
-    <div class="lg:translate-x-[30%] space-y-4 flex flex-col items-center">
-      <div
-        class="shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/9)] h-48 md:h-64 lg:h-[340px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+    <Tablet
+      img_path="/img/4.jpg"
+      translate="md:translate-x-[4%] xl:translate-x-[12%]"
+    >
+      <p
+        slot="title_slot"
+        class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
       >
-        <div
-          class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
-        >
-          <img src="/img/4.jpg" alt="1" class="absolute inset-0 size-full" />
-        </div>
-      </div>
-      <p class="font-medium max-w-[341px] md:max-w-none">
         <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on
         conversational AI
       </p>
-    </div>
+    </Tablet>
   </div>
 </Base>

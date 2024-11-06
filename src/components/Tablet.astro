@@ -1,0 +1,30 @@
+---
+interface Props {
+  img_path: string;
+  translate: string;
+}
+
+const { img_path, translate } = Astro.props;
+---
+
+<div class:list={["space-y-3 flex flex-col items-center", translate]}>
+  <div
+    class="shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/10)] w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+  >
+    <div
+      class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
+    >
+      <img src={img_path} alt="1" class="absolute inset-0 size-full" />
+    </div>
+  </div>
+  <slot name="title_slot" />
+</div>
+
+<!--
+280
+375
+540
+<p class="font-medium max-w-[341px] md:max-w-none">
+  <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
+  AI
+</p> -->
