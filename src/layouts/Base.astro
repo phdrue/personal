@@ -43,12 +43,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </script>
   </head>
 
-  <body x-data="{open: false}" class="bg-white text-primary selection:bg-pink-600 selection:text-primary_bg scrollbar-hide lenis lenis-smooth scroll-pt-16   [&::-webkit-scrollbar]:w-2
+  <body x-data="{open: false}" class="w-full bg-white text-primary selection:bg-pink-600 selection:text-primary_bg">
+    <main class="mx-auto max-w-full">
+    <!-- max-w-screen-2xl --> 
+    <!--  scroll-pt-16 [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:rounded-full
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:rounded-full
-  [&::-webkit-scrollbar-thumb]:bg-gray-300">
-    <main class="mx-auto max-w-screen-2xl">
+  [&::-webkit-scrollbar-thumb]:bg-gray-300 -->
       <!-- px-4 sm:px-6 lg:px-8 h-[2000px] -->
       <Header />
       <slot>

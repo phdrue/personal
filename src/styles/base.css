@@ -2,3 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .active > picture {
+  @apply scale-[1] opacity-100 transition-opacity;
+} */
+
+/* .active {
+  @apply mx-[2.2vw];
+} */
+
+/* .move-left {
+  @apply -translate-x-[2vw];
+} */
+
+/* .move-right {
+  @apply translate-x-[2vw];
+} */
