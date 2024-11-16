@@ -9,11 +9,11 @@ interface Props {
 
 <a
   href={url}
-  class="text-xs flex items-center gap-1 font-medium focus:outline-none sm:text-base first:before:hidden before:flex before:size-[4px] before:rounded-full before:bg-primary group"
+  class="group flex items-center gap-1 text-xs font-medium before:flex before:size-[4px] before:rounded-full before:bg-primary first:before:hidden focus:outline-none sm:text-sm"
 >
   <span
     class:list={[
-      "group-hover:bg-primary group-hover:text-primary_bg group-hover:px-4 rounded-full px-3 py-1.5 transition-all duration-300",
+      "rounded-full px-3 py-1.5 transition-all duration-300 group-hover:bg-primary group-hover:text-white",
       {
         "bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 bg-clip-text text-transparent group-hover:bg-clip-border":
           name === "Inspo",

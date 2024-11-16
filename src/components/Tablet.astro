@@ -8,24 +8,22 @@ interface Props {
 const { img_path, translate, id } = Astro.props;
 ---
 
-<div id={id} class:list={["space-y-3 flex flex-col items-center", translate]}>
+<div
+  id={id}
+  class:list={[
+    "flex w-full flex-col items-center space-y-3 md:w-[375px] lg:w-[605px] xl:w-[770px]",
+    translate,
+  ]}
+>
   <div
-    class="will-change-transform shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] aspect-[calc(16/10)] w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] bg-black border-[3.5px] p-[6px] overflow-hidden rounded-[20px] border-neutral-300"
+    class="aspect-[calc(16/10)] h-auto w-full overflow-hidden rounded-[20px] border-[3.5px] border-neutral-300 bg-black p-[6px] shadow-[rgba(0,_0,_0,_0.24)_10px_8px_16px] will-change-transform"
   >
     <div
-      class="size-full bg-[#32323c] rounded-[10.5px] overflow-hidden relative"
+      class="relative size-full overflow-hidden rounded-[10.5px] bg-[#32323c]"
     >
       <img src={img_path} alt="1" class="size-full object-contain" />
     </div>
   </div>
+
   <slot name="title_slot" />
 </div>
-
-<!--
-280
-375
-540
-<p class="font-medium max-w-[341px] md:max-w-none">
-  <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-  AI
-</p> -->

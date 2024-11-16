@@ -19,6 +19,6 @@ export default defineConfig({
       // Useful if you need to define and/or import your own custom `base.css`.
       applyBaseStyles: false,
     }),
-    alpine({ entrypoint: '/src/entrypoint' }),
+    alpine({ entrypoint: "/src/entrypoint" }),
   ],
 });

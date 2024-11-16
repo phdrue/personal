@@ -26,131 +26,202 @@ const loop = horizontalLoop(boxes, {
   center: true, // active element is the one in the center of the container rather than th left edge
   // paddingRight: 50,
   onChange: (element, index) => {
-    // element.firstElementChild.firstElementChild.classList.add("scale-[1.2]");
-    // element.firstElementChild.firstElementChild.classList.add("transition-all");
-    // if (activeElement) {
-    //   activeElement.firstElementChild.firstElementChild.classList.add("scale-[1]");
-    //   activeElement.firstElementChild.firstElementChild.classList.add("transition-all");
-    // }
-
-    // activeElement && activeElement.classList.remove("first-left");
-
-    // element.firstElementChild.firstElementChild.classList.remove("scale-[1]");
-    // element.firstElementChild.firstElementChild.classList.remove("transition-all");
-    // if (activeElement) {
-    //   activeElement.firstElementChild.firstElementChild.classList.remove("scale-[1.2]");
-    //   // activeElement.firstElementChild.firstElementChild.classList.add("scale-[1]");
-    //   activeElement.firstElementChild.firstElementChild.classList.remove("transition-all");
-    // }
-
-    function normalize(value, length) {
-      if (value < 0) {
-        return length + value;
-      } else if (value > length - 1) {
-        return value - length;
-      } else {
-        return value;
-      }
-    }
-
-    let previous_left = document.getElementsByClassName("move-left");
-    if (previous_left.length > 0) {
-      // console.log(previous_left);
-      previous_left[0].classList.remove("move-left");
-      previous_left[0].classList.remove("move-left");
-      previous_left[0].classList.remove("move-left");
-    }
-
-    let previous_right = document.getElementsByClassName("move-right");
-    // console.log(previous_left);
-    if (previous_right.length > 0) {
-      // console.log(previous_right);
-      previous_right[0].classList.remove("move-right");
-      previous_right[0].classList.remove("move-right");
-      previous_right[0].classList.remove("move-right");
-    }
-
-    let first_left_index = normalize(index - 1, boxes.length);
-    let second_left_index = normalize(index - 2, boxes.length);
-    let third_left_index = normalize(index - 3, boxes.length);
-
-    let first_right_index = normalize(index + 1, boxes.length);
-    let second_right_index = normalize(index + 2, boxes.length);
-    let third_right_index = normalize(index + 3, boxes.length);
-
-    // console.log(second_left_index, first_left_index, index, first_right_index, second_right_index);
-
-    boxes[first_left_index].firstElementChild.classList.add("move-left");
-    boxes[second_left_index].firstElementChild.classList.add("move-left");
-    boxes[third_left_index].firstElementChild.classList.add("move-left");
-
-    boxes[first_right_index].firstElementChild.classList.add("move-right");
-    boxes[second_right_index].firstElementChild.classList.add("move-right");
-    boxes[third_right_index].firstElementChild.classList.add("move-right");
-
-    // element.classList.add("active");
     // activeElement && activeElement.classList.remove("active");
+    // element.classList.add("active");
 
-    // scale
-    // if (activeElement) {
-    //   gsap.to(activeElement.firstElementChild, {
-    //     scale: 0.85,
-    //     duration: 0.8,
-    //     clearProps: true
-    //   });
-    // }
+    // gsap.globalTimeline.timeScale(999);
+    // gsap.globalTimeline.timeScale(1);
 
-    // gsap.to(element.firstElementChild, {
-    //   scale: 1,
-    //   duration: 0.8,
-    //   // clearProps: true
-    // });
+    // gsap.globalTimeline.clear()
 
     let mytl = gsap.timeline().add("start");
 
     if (activeElement) {
-      mytl.to(activeElement.firstElementChild, {
-        scale: 0.85,
-        translateX: 0,
-        duration: 0.3,
-      }, 'start');
+      mytl.to(
+        activeElement,
+        {
+          zIndex: 0,
+          // translateX: 0,
+          duration: 0,
+          // clearProps: true
+        },
+        "start",
+      );
+      mytl.to(
+        activeElement.firstElementChild,
+        {
+          scale: 1,
+          // translateX: 0,
+          duration: 0.2,
+          // clearProps: true
+        },
+        "start",
+      );
     }
 
-    mytl.to(element.firstElementChild, {
-      scale: 1,
-      translateX: 0,
-      duration: 0.3,
-    }, 'start');
+    mytl.to(
+      element,
+      {
+        zIndex: 1,
+        // translateX: 0,
+        duration: 0.2,
+        // delay: 0.2
+        // clearProps: true
+      },
+      "start",
+    );
+    mytl.to(
+      element.firstElementChild,
+      {
+        scale: 1.15,
+        // translateX: 0,
+        duration: 0.2,
+        delay: 0.2,
+        // clearProps: true
+      },
+      "start",
+    );
 
-    mytl.to(boxes[first_left_index].firstElementChild, {
-      translateX: '-2vw',
-      duration: 0.3,
-    }, 'start');
+    // gsap.globalTimeline.timeScale(999);
+    // gsap.globalTimeline.timeScale(1);
 
-    mytl.to(boxes[second_left_index].firstElementChild, {
-      translateX: '-2vw',
-      duration: 0.3,
-    }, 'start');
+    // function normalize(value, length) {
+    //   if (value < 0) {
+    //     return length + value;
+    //   } else if (value > length - 1) {
+    //     return value - length;
+    //   } else {
+    //     return value;
+    //   }
+    // }
 
-    mytl.to(boxes[third_left_index].firstElementChild, {
-      translateX: '-2vw',
-      duration: 0.3,
-    }, 'start');
+    // let first_left_index = normalize(index - 1, boxes.length);
+    // let second_left_index = normalize(index - 2, boxes.length);
+    // let third_left_index = normalize(index - 3, boxes.length);
 
-    mytl.to(boxes[first_right_index].firstElementChild, {
-      translateX: '2vw',
-      duration: 0.3,
-    }, 'start');
+    // let fourth_left_index = normalize(index - 4, boxes.length);
 
-    mytl.to(boxes[second_right_index].firstElementChild, {
-      translateX: '2vw',
-      duration: 0.3,
-    }, 'start');
+    // let first_right_index = normalize(index + 1, boxes.length);
+    // let second_right_index = normalize(index + 2, boxes.length);
+    // let third_right_index = normalize(index + 3, boxes.length);
 
-    mytl.to(boxes[third_right_index].firstElementChild, {
-      translateX: '2vw',
-      duration: 0.3,
-    }, 'start');
+    // let fourth_right_index = normalize(index + 4, boxes.length);
+
+    // console.log(
+    //   third_left_index,
+    //   second_left_index,
+    //   first_left_index,
+    //   index,
+    //   first_right_index,
+    //   second_right_index,
+    //   third_right_index
+    // );
+
+    // let mytl = gsap.timeline().add("start");
+
+    // if (activeElement) {
+    //   mytl.to(
+    //     activeElement.firstElementChild,
+    //     {
+    //       scale: 0.85,
+    //       // translateX: 0,
+    //       duration: 0.3,
+    //       // clearProps: true
+    //     },
+    //     "start"
+    //   );
+    // }
+
+    // mytl.to(
+    //   element.firstElementChild,
+    //   {
+    //     scale: 1,
+    //     // translateX: 0,
+    //     duration: 0.3,
+    //     // clearProps: true
+    //   },
+    //   "start"
+    // );
+
+    // mytl.to(
+    //   element.firstElementChild,
+    //   {
+    //     translateX: 0,
+    //     duration: 0,
+    //   },
+    //   "start"
+    // );
+
+    // // console.log(gsap.getProperty(boxes[first_left_index].firstElementChild, 'translateX'));
+
+    // element.firstElementChild.classList.remove("move-left");
+    // element.firstElementChild.classList.remove("move-right");
+
+    // // sleep
+
+    // boxes[first_left_index].firstElementChild.classList.remove("move-right");
+    // boxes[first_right_index].firstElementChild.classList.remove("move-left");
+    // boxes[second_left_index].firstElementChild.classList.remove("move-right");
+    // boxes[second_right_index].firstElementChild.classList.remove("move-left");
+    // boxes[third_left_index].firstElementChild.classList.remove("move-right");
+    // boxes[third_right_index].firstElementChild.classList.remove("move-left");
+
+    // boxes[first_left_index].firstElementChild.classList.add("move-left");
+    // boxes[first_right_index].firstElementChild.classList.add("move-right");
+    // boxes[second_left_index].firstElementChild.classList.add("move-left");
+    // boxes[second_right_index].firstElementChild.classList.add("move-right");
+    // boxes[third_left_index].firstElementChild.classList.add("move-left");
+    // boxes[third_right_index].firstElementChild.classList.add("move-right");
+
+    // mytl.to(
+    //   boxes[first_left_index].firstElementChild,
+    //   {
+    //     translateX: "-2vw",
+    //     duration: 0.3,
+    //     ease: "power4.out",
+    //   },
+    //   "start"
+    // );
+
+    // mytl.to(
+    //   boxes[second_left_index].firstElementChild,
+    //   {
+    //     translateX: "-2vw",
+    //     duration: 0,
+    //     ease: "power4.out",
+    //   },
+    //   "start"
+    // );
+
+    // mytl.to(
+    //   boxes[first_right_index].firstElementChild,
+    //   {
+    //     translateX: "2vw",
+    //     duration: 0.3,
+    //     ease: "power4.out",
+    //   },
+    //   "start"
+    // );
+
+    // mytl.to(
+    //   boxes[second_right_index].firstElementChild,
+    //   {
+    //     translateX: "2vw",
+    //     duration: 0,
+    //     ease: "power4.out",
+    //   },
+    //   "start"
+    // );
+
+    // mytl.to(
+    //   boxes[third_right_index].firstElementChild,
+    //   {
+    //     translateX: "2vw",
+    //     duration: 0,
+    //     ease: "power4.out",
+    //   },
+    //   "start"
+    // );
 
     activeElement = element;
   },
@@ -158,8 +229,8 @@ const loop = horizontalLoop(boxes, {
 
 boxes.forEach((box, i) =>
   box.addEventListener("click", () =>
-    loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" })
-  )
+    loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" }),
+  ),
 );
 
 // document.querySelector(".toggle").addEventListener("click", () => wrapper.classList.toggle("show-overflow"));
@@ -241,7 +312,7 @@ function horizontalLoop(items, config) {
           widths[i] = parseFloat(gsap.getProperty(el, "width", "px"));
           xPercents[i] = snap(
             (parseFloat(gsap.getProperty(el, "x", "px")) / widths[i]) * 100 +
-              gsap.getProperty(el, "xPercent")
+              gsap.getProperty(el, "xPercent"),
           );
           b2 = el.getBoundingClientRect();
           spaceBefore[i] = b2.left - (i ? b1.right : b1.left);
@@ -263,7 +334,7 @@ function horizontalLoop(items, config) {
             times[i] = timeWrap(
               tl.labels["label" + i] +
                 (tl.duration() * widths[i]) / 2 / totalWidth -
-                timeOffset
+                timeOffset,
             );
           });
       },
@@ -299,13 +370,13 @@ function horizontalLoop(items, config) {
               xPercent: snap(((curX - distanceToLoop) / widths[i]) * 100),
               duration: distanceToLoop / pixelsPerSecond,
             },
-            0
+            0,
           )
             .fromTo(
               item,
               {
                 xPercent: snap(
-                  ((curX - distanceToLoop + totalWidth) / widths[i]) * 100
+                  ((curX - distanceToLoop + totalWidth) / widths[i]) * 100,
                 ),
               },
               {
@@ -314,7 +385,7 @@ function horizontalLoop(items, config) {
                   (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
                 immediateRender: false,
               },
-              distanceToLoop / pixelsPerSecond
+              distanceToLoop / pixelsPerSecond,
             )
             .add("label" + i, distanceToStart / pixelsPerSecond);
           times[i] = distanceToStart / pixelsPerSecond;
@@ -388,12 +459,12 @@ function horizontalLoop(items, config) {
         wasPlaying,
         align = () =>
           tl.progress(
-            wrap(startProgress + (draggable.startX - draggable.x) * ratio)
+            wrap(startProgress + (draggable.startX - draggable.x) * ratio),
           ),
         syncIndex = () => tl.closestIndex(true);
       typeof InertiaPlugin === "undefined" &&
         console.warn(
-          "InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club"
+          "InertiaPlugin required for momentum-based scrolling and snapping. https://greensock.com/club",
         );
       draggable = Draggable.create(proxy, {
         trigger: items[0].parentNode,
@@ -536,7 +607,7 @@ let tablet1 = gsap.fromTo(
     duration: 1.2,
     clearProps: true,
     // ease: "power1.out"
-  }
+  },
 );
 let tablet2 = gsap.fromTo(
   "#tablet-2",
@@ -552,7 +623,7 @@ let tablet2 = gsap.fromTo(
     duration: 1.2,
     clearProps: true,
     // ease: "power1.out"
-  }
+  },
 );
 let tablet3 = gsap.fromTo(
   "#tablet-3",
@@ -568,7 +639,7 @@ let tablet3 = gsap.fromTo(
     duration: 1.2,
     clearProps: true,
     // ease: "power1.out"
-  }
+  },
 );
 let tablet4 = gsap.fromTo(
   "#tablet-4",
@@ -584,7 +655,7 @@ let tablet4 = gsap.fromTo(
     duration: 1.2,
     clearProps: true,
     // ease: "power1.out"
-  }
+  },
 );
 let tablet5 = gsap.fromTo(
   "#tablet-5",
@@ -600,7 +671,7 @@ let tablet5 = gsap.fromTo(
     duration: 1.2,
     clearProps: true,
     // ease: "power1.out"
-  }
+  },
 );
 
 // animation.kill([tablet1, tablet2, tablet3, tablet4, tablet5], "transform,translate");
@@ -658,7 +729,7 @@ tl.to(
     delay: 0.6,
     ease: ease,
   },
-  "<"
+  "<",
 );
 tl.to(
   "#start-overlay-span-2",
@@ -669,7 +740,7 @@ tl.to(
     opacity: 1,
     ease: ease,
   },
-  ">-0.3"
+  ">-0.3",
 );
 tl.to(
   "#start-overlay-span-3",
@@ -680,7 +751,7 @@ tl.to(
     opacity: 1,
     ease: ease,
   },
-  ">-0.2"
+  ">-0.2",
 );
 tl.to(
   "#start-overlay-span-4",
@@ -691,7 +762,7 @@ tl.to(
     opacity: 1,
     ease: ease,
   },
-  ">-0.4"
+  ">-0.4",
 );
 
 tl.to("#start-overlay-black", {
@@ -712,7 +783,7 @@ tl.to(
     duration: 0.4,
     ease: "slow(0.7,0.7,false)",
   },
-  ">-0.31"
+  ">-0.31",
 );
 tl.to(
   "#start-overlay-span-3",
@@ -721,7 +792,7 @@ tl.to(
     duration: 0.4,
     ease: "slow(0.7,0.7,false)",
   },
-  ">-0.31"
+  ">-0.31",
 );
 tl.to(
   "#start-overlay-span-4",
@@ -730,7 +801,7 @@ tl.to(
     duration: 0.4,
     ease: "slow(0.7,0.7,false)",
   },
-  ">-0.31"
+  ">-0.31",
 );
 tl.to(
   "#start-overlay",
@@ -741,7 +812,7 @@ tl.to(
     duration: 1.2,
     ease: "expoScale(0.5,7,none)",
   },
-  ">-0.2"
+  ">-0.2",
 );
 
 // gsap.to("#start-overlay-text", {

@@ -1,26 +1,22 @@
 ---
 interface Props {
-    img_path: string
+  img_path: string;
 }
 
 const { img_path } = Astro.props;
 ---
 
 <!-- paradiso aspect 4/5 -->
-
-<!-- <div
-  class="box flex relative shrink-0 aspect-[1] w-[48vw] lg:w-[22vw]"
->
-  <picture class="block absolute w-[22vw] aspect-[1] z-40 bg-slate-200">
-    <img class="w-[22vw] aspect-[1] ease-in duration-300" src={img_path} alt="a" />
-  </picture>
-</div> -->
-
-
 <div
-  class="box flex items-center justify-center shrink-0 relative aspect-[1] lg:w-[22vw]"
+  class="box relative z-0 flex aspect-[1] w-[48vw] shrink-0 items-center justify-center lg:w-[22vw]"
 >
-  <picture class="inline-block scale-[0.85] border-r absolute w-[26vw] aspect-[1] bg-slate-200 z-0">
-    <img class="size-full aspect-[1] ease-in duration-300" src={img_path} alt="a" />
+  <picture
+    class="absolute z-0 inline-block aspect-[1] w-[52vw] bg-slate-200 lg:w-[22vw]"
+  >
+    <img
+      class="aspect-[1] size-full duration-300 ease-in"
+      src={img_path}
+      alt="a"
+    />
   </picture>
 </div>

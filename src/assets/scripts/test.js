@@ -1,4 +1,3 @@
-
 var slides = document.querySelectorAll(".slide");
 var numSlides = slides.length;
 
@@ -23,13 +22,13 @@ var draggable = new Draggable(proxy, {
     updateProgress();
   },
   snap: {
-    x: (value) => gsap.utils.snap(slideWidth, value)
+    x: (value) => gsap.utils.snap(slideWidth, value),
   },
   onDrag: updateProgress,
   onThrowUpdate: updateProgress,
   onThrowComplete: function () {
     timer.restart(true);
-  }
+  },
 });
 
 window.addEventListener("resize", resize);
@@ -43,9 +42,9 @@ function animateSlides(direction) {
     progress: gsap.utils.snap(1 / numSlides, progress),
     overwrite: true,
     modifiers: {
-      progress: wrapProgress // value => (value < 0 || value === 1 ? 1 : 0) + (value % 1)
+      progress: wrapProgress, // value => (value < 0 || value === 1 ? 1 : 0) + (value % 1)
     },
-    onComplete: () => timer.restart(true)
+    onComplete: () => timer.restart(true),
   });
 }
 
@@ -66,8 +65,8 @@ function resize() {
       xPercent: "+=" + numSlides * 100,
       ease: "none",
       modifiers: {
-        xPercent: wrap
-      }
+        xPercent: wrap,
+      },
     })
     .to(proxy, { x: wrapWidth, duration: 100, ease: "none" }, 0)
     .progress(progress);

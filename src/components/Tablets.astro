@@ -2,70 +2,69 @@
 import Tablet from "../components/Tablet.astro";
 ---
 
-<div class="space-y-20 mx-[6%] lg:mx-0 my-24">
-  <Tablet id="tablet-1" img_path="/img/1.jpg" translate="">
-    <p
-      slot="title_slot"
-      class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
-    >
-      <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-      AI
-    </p>
-  </Tablet>
+<script>
+  import "../assets/scripts/tablets";
+</script>
 
-  <Tablet
-    id="tablet-2"
-    img_path="/img/2.jpg"
-    translate="translate-x-0 md:translate-x-[8%] xl:translate-x-[16%]"
+<!-- <div class="mx-[6%] my-24 space-y-20 lg:mx-0"> -->
+<div class="relative my-24 px-[6%] py-16 lg:px-0">
+  <!-- overlay -->
+  <div
+    class="sticky top-[30vh] select-none text-center text-[30vw] font-normal xl:top-[0px] "
   >
-    <p
-      slot="title_slot"
-      class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
-    >
-      <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-      AI
-    </p>
-  </Tablet>
+    WORK
+  </div>
 
-  <Tablet
-    id="tablet-3"
-    img_path="/img/3.jpg"
-    translate="translate-x-0 md:-translate-x-[6%] xl:-translate-x-[14%]"
-  >
-    <p
-      slot="title_slot"
-      class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
-    >
-      <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-      AI
-    </p>
-  </Tablet>
+  <div class="flex flex-col items-center justify-center space-y-20 py-[50vh]">
+    <Tablet id="tablet-1" img_path="/img/1.jpg" translate="">
+      <p slot="title_slot" class="w-full pl-2 text-sm xl:text-base">
+        <span class="mr-1 font-bold">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
 
-  <Tablet
-    id="tablet-4"
-    img_path="/img/4.jpg"
-    translate="translate-x-0 md:translate-x-[4%] xl:translate-x-[12%]"
-  >
-    <p
-      slot="title_slot"
-      class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
+    <Tablet
+      id="tablet-2"
+      img_path="/img/2.jpg"
+      translate="md:translate-x-[8%] xl:translate-x-[16%]"
     >
-      <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-      AI
-    </p>
-  </Tablet>
+      <p slot="title_slot" class="w-full pl-2 text-sm xl:text-base">
+        <span class="mr-1 font-bold">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
 
-  <!-- <Tablet
-    id="tablet-5"
-    img_path="/img/album.png"
-    translate="translate-x-0 md:translate-x-[4%] xl:translate-x-[12%]"
-  >
-    <p
-      slot="title_slot"
-      class="text-sm lg:text-base w-full md:max-w-[375px] lg:max-w-[460px] xl:max-w-[540px] pl-2"
+    <Tablet
+      id="tablet-3"
+      img_path="/img/3.jpg"
+      translate="md:-translate-x-[6%] xl:-translate-x-[14%]"
     >
-      <span class="font-bold mr-1">LautmalerA</span> unique agency, focused on conversational
-      AI
-    </p>
-  </Tablet> -->
+      <p slot="title_slot" class="w-full pl-2 text-sm xl:text-base">
+        <span class="mr-1 font-bold">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
+
+    <Tablet
+      id="tablet-4"
+      img_path="/img/4.jpg"
+      translate="md:translate-x-[4%] xl:translate-x-[12%]"
+    >
+      <p slot="title_slot" class="w-full pl-2 text-sm xl:text-base">
+        <span class="mr-1 font-bold">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
+
+    <Tablet
+      id="tablet-5"
+      img_path="/img/albums/album4.webp"
+      translate="md:translate-x-[4%] xl:translate-x-[12%]"
+    >
+      <p slot="title_slot" class="w-full pl-2 text-sm xl:text-base">
+        <span class="mr-1 font-bold">LautmalerA</span> unique agency, focused on
+        conversational AI
+      </p>
+    </Tablet>
+  </div>
 </div>

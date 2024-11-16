@@ -3,18 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .active > picture {
-  @apply scale-[1] opacity-100 transition-opacity;
-} */
+.active {
+  @apply z-10;
+}
 
-/* .active {
-  @apply mx-[2.2vw];
-} */
+.active > picture {
+  @apply scale-110;
+}
 
 /* .move-left {
   @apply -translate-x-[2vw];
-} */
+}
 
-/* .move-right {
+.move-right {
   @apply translate-x-[2vw];
 } */
