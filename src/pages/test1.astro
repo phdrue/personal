@@ -8,14 +8,146 @@ import Carousel from "../components/Carousel.astro";
 <Base>
   <script>
     import "../assets/scripts/backgrounds";
+    import "../assets/scripts/hero";
   </script>
-  <!-- <StartOverlay /> -->
+  <StartOverlay />
 
   <!-- <Carousel /> -->
 
-  <div class="h-screen w-screen">
-    <div class="magicpattern"></div>
+  <div
+    x-data="followMouse()"
+    @mousemove="handleMousemove"
+    @mouseout="handleMouseout"
+    class="relative h-[540px] w-full sm:h-[580px] md:-mt-[114px] md:h-[770px] lg:h-[880px] xl:h-[940px]"
+  >
+    <div>
+      <div class="absolute inset-0 -z-10 flex">
+        <div
+          class="hidden flex-1 lg:block"
+          :style="{ backgroundColor: '#' + bottomColors[0] }"
+          style="background-color: rgb(116, 202, 232);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[1] }"
+          style="background-color: rgb(122, 195, 220);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[2] }"
+          style="background-color: rgb(127, 189, 209);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[3] }"
+          style="background-color: rgb(133, 182, 197);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[4] }"
+          style="background-color: rgb(138, 175, 186);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[5] }"
+          style="background-color: rgb(144, 168, 174);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + bottomColors[6] }"
+          style="background-color: rgb(149, 162, 163);"
+        >
+        </div>
+        <div
+          class="hidden flex-1 lg:block"
+          :style="{ backgroundColor: '#' + bottomColors[7] }"
+          style="background-color: rgb(155, 155, 151);"
+        >
+        </div>
+      </div>
+
+      <div
+        class="absolute inset-0 -z-10 flex"
+        :style="{ opacity: topOpacity }"
+        style="opacity: 0.24875;"
+      >
+        <div
+          class="hidden flex-1 lg:block"
+          :style="{ backgroundColor: '#' + topColors[0] }"
+          style="background-color: rgb(167, 221, 140);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[1] }"
+          style="background-color: rgb(165, 212, 142);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[2] }"
+          style="background-color: rgb(164, 202, 143);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[3] }"
+          style="background-color: rgb(162, 193, 145);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[4] }"
+          style="background-color: rgb(160, 183, 146);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[5] }"
+          style="background-color: rgb(158, 174, 148);"
+        >
+        </div>
+        <div
+          class="flex-1"
+          :style="{ backgroundColor: '#' + topColors[6] }"
+          style="background-color: rgb(157, 164, 149);"
+        >
+        </div>
+        <div
+          class="hidden flex-1 lg:block"
+          :style="{ backgroundColor: '#' + topColors[7] }"
+          style="background-color: rgb(155, 155, 151);"
+        >
+        </div>
+      </div>
+    </div>
+
+    <div class="h-full px-6 py-10 md:px-16 md:py-16 lg:px-28 lg:py-24">
+      <div
+        class="mx-auto flex h-full max-w-screen-2xl flex-col items-start justify-center md:pt-24"
+        id="content"
+      >
+        <h1
+          class="xs:text-5xl leading-tight-1 xs:leading-tight-1 sm:leading-tight-1 lg:leading-tight-1 xl:leading-tight-1 font-serif text-4xl font-extralight sm:text-6xl lg:text-7xl xl:text-8xl"
+        >
+          <span class="block relative">phdrue</span>
+          The <span class="italic">start</span> of something <span class="italic"
+            >different</span
+          >
+        </h1>
+      </div>
+    </div>
   </div>
+
+  <!-- <div class="h-screen w-screen">
+    <div class="magicpattern"></div>
+  </div> -->
 
   <!-- <div class="relative h-screen w-screen">
     <div class="absolute inset-0 z-0">
@@ -55,8 +187,19 @@ import Carousel from "../components/Carousel.astro";
   <div class="mb-24 mt-[1300px] w-full px-8">
     <div
       id="smoky-bg"
-      class="h-[470px] rounded-2xl bg-white bg-[url('/img/bg/smoky1.jpg')] bg-cover bg-fixed bg-bottom"
+      class="relative p-6 h-[400px] flex flex-col justify-between rounded-2xl bg-white bg-[url('/img/bg/smoky1.jpg')] bg-cover bg-fixed bg-bottom"
     >
+    <div class="text-white font-[350] text-[5vw]">
+      Design Strategy
+    </div>
+    <div>
+      <div class="">
+
+      </div>
+      <div class="">
+
+      </div>
+    </div>
     </div>
   </div>
 
