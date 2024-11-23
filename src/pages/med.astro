@@ -1,0 +1,242 @@
+---
+import Base from "../layouts/Base.astro";
+
+import doctorIcon from "../../public/med/icons/doctor.svg?raw";
+import diagnosticsIcon from "../../public/med/icons/diagnostics.svg?raw";
+import dentistIcon from "../../public/med/icons/dentist.svg?raw";
+import hospitalIcon from "../../public/med/icons/hospital.svg?raw";
+
+const services = [
+  {
+    name: "Прием пациентов",
+    description: "Приём пациентов по всем направлениям медицинских услуг",
+    icon: doctorIcon,
+  },
+  {
+    name: "Диагностика",
+    description:
+      "Проведение диагностических процедур на самом современном оборудовании",
+    icon: diagnosticsIcon,
+  },
+  {
+    name: "Стоматология",
+    description: "Стоматологическая поликлиника мирового уровня",
+    icon: dentistIcon,
+  },
+  {
+    name: "Дневной стационар",
+    description: "Дневной стационар на ул. Маяковского, 85",
+    icon: hospitalIcon,
+  },
+];
+
+const features = [
+  {
+    name: "Коллектив профессионалов",
+    description: "Приём пациентов по всем направлениям медицинских услуг",
+    buttonColor: "group-hover:bg-brand-actual_red",
+    fullWidth: false,
+  },
+  {
+    name: "Новейшее оборудование",
+    description:
+      "Проведение диагностических процедур на самом современном оборудовании",
+    buttonColor: "group-hover:bg-brand-actual_red",
+    fullWidth: false,
+  },
+  {
+    name: "Медицинские услуги любого профиля",
+    description:
+      "Проведение диагностических процедур на самом современном оборудовании",
+    buttonColor: "group-hover:bg-brand-actual_red",
+    fullWidth: true,
+  },
+];
+---
+
+<Base>
+  <div class="h-[250px]"></div>
+
+  <img class="mx-auto size-44" src="/med/icons/image.png" alt="" />
+
+  <div class="mx-auto mb-2 flex w-max gap-2">
+    <button
+      class="rounded-md bg-brand-blue px-6 py-3 text-base font-semibold text-brand-white"
+    >
+      Записаться на прием
+    </button>
+    <button
+      class="rounded-md bg-brand-red px-6 py-3 text-base font-semibold text-brand-white"
+    >
+      Записаться на прием
+    </button>
+    <!-- <button
+      class="bg-brand-blue1 text-brand-white rounded-md px-6 py-2.5 text-base font-semibold "
+    >
+      Записаться на прием
+    </button> -->
+  </div>
+
+  <div class="mx-auto mb-12 flex w-max gap-2">
+    <!-- <button
+      class="bg-brand-dark_blue text-brand-white rounded-md px-6 py-2.5 text-base font-semibold "
+    >
+      Записаться на прием
+    </button> -->
+    <button
+      class="rounded-md bg-brand-dark_blue px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-blue"
+    >
+      Записаться на прием
+    </button>
+    <button
+      class="rounded-md bg-brand-dark_red px-6 py-3 text-base font-semibold text-brand-white"
+    >
+      Записаться на прием
+    </button>
+  </div>
+
+  <div class="mx-auto w-full max-w-7xl px-6 lg:px-10">
+    <div class="grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+      <!-- first banner -->
+      <div
+        class="relative row-span-2 flex h-[40rem] flex-col justify-end space-y-6 bg-[url('/med/images/dentist.png')] bg-contain bg-fixed bg-right p-12 text-brand-white md:col-span-2"
+      >
+        <div class="absolute inset-0 z-10 bg-brand-dark_blue/80"></div>
+        <h2 class="relative z-20 text-3xl font-bold">Стоматология КГМУ</h2>
+        <p class="relative z-20 max-w-[60%] text-xl font-medium">
+          Стоматологическая клиника мирового уровня
+        </p>
+        <div class="relative z-20 flex flex-row items-center gap-4">
+          <button
+            @click="prev()"
+            class="group inline-flex items-center justify-center whitespace-nowrap rounded-md border border-zinc-950/10 bg-brand-actual_red p-2 text-sm font-medium shadow-md transition-colors duration-300 hover:bg-brand-gray focus:outline-none focus:ring-1 focus:ring-zinc-200 focus:ring-offset-0 active:bg-zinc-50"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-[26px] transition-colors duration-300 group-hover:text-brand-actual_red"
+            >
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </button>
+          <button
+            @click="next()"
+            class="group inline-flex items-center justify-center whitespace-nowrap rounded-md border border-zinc-950/10 bg-brand-actual_red p-2 text-sm font-medium shadow-md transition-colors duration-300 hover:bg-brand-gray focus:outline-none focus:ring-1 focus:ring-zinc-200 focus:ring-offset-0 active:bg-zinc-50"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-[26px] transition-colors duration-300 group-hover:text-brand-actual_red"
+            >
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- first services -->
+      {
+        services.map((service) => (
+          <div class="group space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary transition-all duration-300 hover:bg-brand-dark_blue hover:text-brand-white">
+            <span class="block size-8 transition-all duration-300 *:text-brand-actual_red group-hover:*:text-brand-white">
+              <Fragment class="size-full" set:html={service.icon} />
+            </span>
+            <h3 class="text-xl font-bold">{service.name}</h3>
+            <p class="text-sm font-medium">{service.description}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-5 grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
+    >
+      <!-- features -->
+      {
+        features.map((feature) => (
+          <div
+            class:list={[
+              "group flex flex-col justify-around space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary transition-all duration-300",
+              { "col-span-2": feature.fullWidth },
+            ]}
+          >
+            {/* <span class="*:text-brand-actual_red group-hover:*:text-brand-white block size-8 transition-all duration-300">
+              <Fragment class="size-full" set:html={feature.icon} />
+            </span> */}
+            <h3 class="text-xl font-bold">{feature.name}</h3>
+            <p class="text-sm font-medium">{feature.description}</p>
+            <div class="flex w-full justify-end">
+              <button
+                class:list={[
+                  "inline-flex items-center justify-center whitespace-nowrap rounded-md border border-zinc-950/10 bg-inherit p-2 text-sm font-medium shadow-md transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-zinc-200 focus:ring-offset-0 active:bg-zinc-50",
+                  feature.buttonColor,
+                ]}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class:list={[
+                    "size-[26px] transition-colors duration-300 group-hover:text-white",
+                  ]}
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- second banner -->
+      <div
+        class="overflow-hidden justify-top text-brand-black relative row-span-2 flex h-[40rem] flex-col gap-8 rounded-md bg-brand-gray p-12 md:col-span-2 md:col-start-3 md:row-start-1"
+      >
+        <span class="z-20 absolute right-6 top-6 size-4 rounded-full bg-white"
+        ></span>
+        <span class="z-20 absolute left-6 top-6 size-4 rounded-full bg-white">
+        </span>
+
+        <span class="z-20 absolute bottom-6 left-6 size-4 rounded-full bg-white"
+        ></span>
+        <span class="z-20 absolute bottom-6 right-6 size-4 rounded-full bg-white"
+        ></span>
+
+        <div class="absolute -rotate-[35deg] translate-y-[10%] translate-x-[50%] right-0 bottom-0 z-[9] h-[50%] w-[40%] bg-white"></div>
+        <div class="absolute -rotate-[20deg] translate-y-[50%] translate-x-[30%] right-0 bottom-0 z-10 h-[50%] w-[50%] bg-brand-dark_blue"></div>
+        <h2 class="relative z-20 text-5xl font-bold">
+          Медицинские услуги высочайшего уровня
+        </h2>
+        <p class="relative z-20 text-pretty text-xl font-medium">
+          Университетская клиника создана для того, чтобы обеспечивая высокий
+          уровень образования, нести людям качественную медицину для обеспечения
+          здоровья, красоты, комфортной жизни и полноценного долголетия.
+        </p>
+        <button
+          class="relative z-20 max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-dark_blue"
+        >
+          Записаться на приём
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-[2500px]"></div>
+</Base>
