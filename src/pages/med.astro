@@ -207,20 +207,31 @@ const features = [
 
       <!-- second banner -->
       <div
-        class="overflow-hidden justify-top text-brand-black relative row-span-2 flex h-[40rem] flex-col gap-8 rounded-md bg-brand-gray p-12 md:col-span-2 md:col-start-3 md:row-start-1"
+        class="justify-top text-brand-black group relative row-span-2 flex h-[40rem] flex-col gap-8 overflow-hidden rounded-md bg-brand-gray p-12 md:col-span-2 md:col-start-3 md:row-start-1"
       >
-        <span class="z-20 absolute right-6 top-6 size-4 rounded-full bg-white"
+        <span
+          class="transition-colors duration-300 absolute right-6 top-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
         ></span>
-        <span class="z-20 absolute left-6 top-6 size-4 rounded-full bg-white">
+        <span
+          class="transition-colors duration-300 absolute left-6 top-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
+        >
         </span>
 
-        <span class="z-20 absolute bottom-6 left-6 size-4 rounded-full bg-white"
+        <span
+          class="transition-colors duration-300 absolute bottom-6 left-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
         ></span>
-        <span class="z-20 absolute bottom-6 right-6 size-4 rounded-full bg-white"
+        <span
+          class="transition-colors duration-300 absolute bottom-6 right-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
         ></span>
 
-        <div class="absolute -rotate-[35deg] translate-y-[10%] translate-x-[50%] right-0 bottom-0 z-[9] h-[50%] w-[40%] bg-white"></div>
-        <div class="absolute -rotate-[20deg] translate-y-[50%] translate-x-[30%] right-0 bottom-0 z-10 h-[50%] w-[50%] bg-brand-dark_blue"></div>
+        <div
+          class="absolute bottom-0 right-0 z-[9] h-[50%] w-[40%] translate-x-[50%] translate-y-[10%] -rotate-[35deg] bg-white"
+        >
+        </div>
+        <div
+          class="absolute bottom-0 right-0 z-10 h-[50%] w-[50%] translate-x-[30%] translate-y-[50%] -rotate-[20deg] bg-brand-dark_blue"
+        >
+        </div>
         <h2 class="relative z-20 text-5xl font-bold">
           Медицинские услуги высочайшего уровня
         </h2>
