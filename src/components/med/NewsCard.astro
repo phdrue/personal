@@ -1,0 +1,85 @@
+---
+interface Props {
+  orientation: string;
+  img_path: string;
+  header: string;
+  //   header_color: string;
+  color: string;
+  date: string;
+  link_text: string;
+  text: string;
+  tags: Array<string>;
+}
+
+const { color, orientation, img_path, header, date, link_text, text, tags } =
+  Astro.props;
+---
+
+<article
+  class:list={[
+    "flex w-full items-start",
+    { "flex-col": orientation == "vertical" },
+    { "flex-row": orientation == "horizontal" },
+  ]}
+>
+  <a href="">
+    <figure
+      class:list={[
+        "block",
+        { "w-full": orientation == "vertical" },
+        { "w-max": orientation == "horizontal" },
+      ]}
+    >
+      <img
+        class:list={[
+          "aspect-[calc(16/9)] w-full object-cover",
+          { "md:w-48 lg:w-40 xl:w-64": orientation == "horizontal" },
+        ]}
+        src={img_path}
+        alt=""
+      />
+    </figure>
+  </a>
+  <!-- text -->
+  <div
+    class:list={[
+      "text-brand-text-primary",
+      { "md:pl-6 lg:pr-9": orientation == "horizontal" },
+      { "mt-4": orientation == "vertical" },
+    ]}
+  >
+    <!-- header -->
+    <div class="flex gap-2 text-xs">
+      <a href="" class:list={["font-bold uppercase", `text-${color}`]}
+        ># {header}</a
+      >
+      <div>
+        <span class="mr-2 font-medium lowercase text-brand-text-secondary"
+          >{date}</span
+        >
+        <span></span>
+      </div>
+    </div>
+    <!-- link -->
+    <a
+      href=""
+      class:list={["mt-3 block text-2xl font-semibold", `hover:text-${color}`]}
+      >{link_text}</a
+    >
+    <!-- text -->
+    <p class="mt-3 text-base font-normal">{text}</p>
+    <!-- tags -->
+    <div class="mt-5 flex flex-row flex-wrap gap-2">
+      {
+        tags.map((tag) => (
+          <a
+            href=""
+            class="rounded-md bg-brand-gray px-2 py-1 text-sm font-medium"
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</article>

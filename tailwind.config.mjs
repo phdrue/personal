@@ -9,7 +9,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Montserrat']
+        // sans: ["Rubik"],
+        sans: ['Montserrat'],
+        lobster: ['Lobster'],
+        vibes: ["'Great Vibes'"]
       },
       colors: {
         primary: "#1E1A1B",
@@ -27,9 +30,16 @@ export default {
 
           // blue: '#286fb7',
           blue: '#0c74bb',
-          green: '#73ff66',
-          lime: '#a6ff00',
-          cyan: '#66f2ff',
+          
+          // green: '#73ff66',
+          green: '#67E65C',
+          // lime: '#a6ff00',
+          lime: '#95E600',
+          
+          cyan: '#5CDAE6',
+          // cyan: '#66f2ff',
+
+
           // blue: '#2a62ad',
           
           // blue: '#196bb4',

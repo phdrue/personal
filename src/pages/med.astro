@@ -5,6 +5,7 @@ import doctorIcon from "../../public/med/icons/doctor.svg?raw";
 import diagnosticsIcon from "../../public/med/icons/diagnostics.svg?raw";
 import dentistIcon from "../../public/med/icons/dentist.svg?raw";
 import hospitalIcon from "../../public/med/icons/hospital.svg?raw";
+import NewsCard from "../components/med/NewsCard.astro";
 
 const services = [
   {
@@ -34,21 +35,21 @@ const features = [
   {
     name: "Коллектив профессионалов",
     description: "Приём пациентов по всем направлениям медицинских услуг",
-    buttonColor: "group-hover:bg-brand-actual_red",
+    buttonColor: "group-hover:bg-brand-dark_blue",
     fullWidth: false,
   },
   {
     name: "Новейшее оборудование",
     description:
       "Проведение диагностических процедур на самом современном оборудовании",
-    buttonColor: "group-hover:bg-brand-actual_red",
+    buttonColor: "group-hover:bg-brand-dark_blue",
     fullWidth: false,
   },
   {
     name: "Медицинские услуги любого профиля",
     description:
       "Проведение диагностических процедур на самом современном оборудовании",
-    buttonColor: "group-hover:bg-brand-actual_red",
+    buttonColor: "group-hover:bg-brand-dark_blue",
     fullWidth: true,
   },
 ];
@@ -56,50 +57,168 @@ const features = [
 
 <Base>
   <div class="h-[250px]"></div>
+  <span class="text-brand-lime hover:text-brand-lime"></span>
+  <span class="text-brand-green hover:text-brand-green"></span>
+  <span class="text-brand-cyan hover:text-brand-cyan"></span>
+  <span class="text-brand-actual_red hover:text-brand-actual_red"></span>
+  <span class="text-brand-blue hover:text-brand-blue"></span>
 
-  <img class="mx-auto size-44" src="/med/icons/image.png" alt="" />
+  <div class="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
+    <p class="mb-12 text-3xl font-bold flex gap-2 items-center">
+      Новости университета <svg
+        width="44"
+        height="44"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          stroke="#000"
+          stroke-width="2.5"
+          fill="none"
+          fill-rule="evenodd"
+          stroke-linecap="square"
+        >
+          <path d="M11 21h20v12"></path>
+          <path d="M25.5 29l5.5 5.5 5.5-5.5"></path>
+        </g></svg>
+    </p>
 
-  <div class="mx-auto mb-2 flex w-max gap-2">
-    <button
-      class="rounded-md bg-brand-blue px-6 py-3 text-base font-semibold text-brand-white"
-    >
-      Записаться на прием
-    </button>
-    <button
-      class="rounded-md bg-brand-red px-6 py-3 text-base font-semibold text-brand-white"
-    >
-      Записаться на прием
-    </button>
-    <!-- <button
+    <div class="grid grid-cols-3 gap-8">
+      <!-- news -->
+      <!--# образование / наука / медицина -->
+      <!-- важно | события / студенту / сотруднику  -->
+      <div class="col-span-2 space-y-20">
+        <NewsCard
+          orientation="horizontal"
+          color="brand-lime"
+          img_path="/med/images/articles/1.png"
+          header="Образование"
+          date="24.11.2024"
+          link_text="Рабочая поездка в Курскую область Министра Здравоохранения РФ"
+          text="Михаил Мурашко: В Курской области полностью обеспечивается и амбулаторная, и стационарная  медицинская помощь"
+          tags={["Важно", "События", "Студенту"]}
+        />
+
+        <NewsCard
+          orientation="horizontal"
+          color="brand-cyan"
+          img_path="/med/images/articles/2.png"
+          header="Наука"
+          date="24.11.2024"
+          link_text="Первые шаги в науке на IV Всероссийской студенческой научной конференции с международным участием"
+          text="В Курском государственном медицинском университете 20 ноября 2024 года состоялась IV Всероссийская (с международным участием) студенческая научная конференция «Первые шаги в науке», приуроченная к Году семьи, учрежденного указом Президента Российской Федерации"
+          tags={["Конференция", "Студенту"]}
+        />
+
+        <NewsCard
+          orientation="horizontal"
+          color="brand-actual_red"
+          img_path="/med/images/articles/3.png"
+          header="Медицина"
+          date="22.11.2024"
+          link_text="В России отмечается день психолога!"
+          text="22 ноября свой профессиональный праздник отмечают все российские психологи. Праздничные мероприятия этого дня призваны напомнить людям о важности профессии психолога и привлечь внимание государства к вопросам развития психологической науки и практики, проблемам в оказании психологической помощи населению, в разрешении которых механизмы государственного регулирования имеют решающее значение."
+          tags={["Праздник"]}
+        />
+
+        <NewsCard
+          orientation="horizontal"
+          color="brand-lime"
+          img_path="/med/images/articles/4.png"
+          header="Образование"
+          date="25.11.2024"
+          link_text="Прошел финал конкурса «СМОТРИТЕ, КТО ПРИШЁЛ»"
+          text="В эту непростую осень уникальный фестиваль творчества первокурсников КГМУ «Смотрите, кто пришёл!» стал настоящей отдушиной для всего Курского медуниверситета. Студенты и педагоги КГМУ, многие из которых большую часть недели сейчас проводят в медучреждениях, на скорой помощи, в отделениях Красного Креста и в ПВРах, помогая пострадавшим, в этот пятничный вечер восхищались творческими достижениям новой волны студентов, влившихся в большую семью КГМУ. "
+          tags={["События", "Студенту"]}
+        />
+      </div>
+      <!-- important -->
+      <div class="cols-span-1 space-y-20">
+        <div>
+          <p class="mb-8 block text-2xl font-bold">Важные объявления</p>
+
+          <NewsCard
+            orientation="vertical"
+            color="brand-blue"
+            img_path="/med/images/articles/v1.png"
+            header="Объявление"
+            date="24.11.2024"
+            link_text="Обращение ректора к преподавателям, обучающимся и сотрудникам!"
+            text="Уважаемые коллеги, обучающиеся и сотрудники! Обращаюсь к вам как ректор КГМУ, депутат Курской областной Думы, врач и гражданин Российской Федерации. Курская область сегодня переживает один из самых непростых моментов своей истории, обусловленной ситуацией в приграничных районах Курской области.ь"
+            tags={["Важно", "Объявление"]}
+          />
+        </div>
+
+        <NewsCard
+          orientation="vertical"
+          color="brand-blue"
+          img_path="/med/images/articles/v2.png"
+          header="Наука"
+          date="24.11.2024"
+          link_text="Мошенничество по телефону! Проявляйте осторожность и бдительность!"
+          text="Уважаемые обучающиеся и сотрудники! В настоящее время на территории г. Курска и Курской области участились случаи телефонного мошенничества."
+          tags={["Важно", "Объявление"]}
+        />
+
+        <NewsCard
+          orientation="vertical"
+          color="brand-blue"
+          img_path="/med/images/articles/v3.png"
+          header="Медицина"
+          date="22.11.2024"
+          link_text="О ТЕКУЩЕЙ СИТУАЦИИ В КУРСКОЙ ОБЛАСТИ"
+          text="Уважаемые коллеги, обучающиеся и сотрудники! Обращаюсь к вам как ректор КГМУ, депутат Курской областной Думы, врач и гражданин Российской Федерации."
+          tags={["Важно", "Объявление"]}
+        />
+      </div>
+    </div>
+
+    <div class="h-[450px]"></div>
+
+    <img class="mx-auto size-44" src="/med/icons/image.png" alt="" />
+
+    <div class="mx-auto mb-2 flex w-max gap-2">
+      <button
+        class="rounded-md bg-brand-blue px-6 py-3 text-base font-semibold text-brand-white"
+      >
+        Записаться на прием
+      </button>
+      <button
+        class="rounded-md bg-brand-red px-6 py-3 text-base font-semibold text-brand-white"
+      >
+        Записаться на прием
+      </button>
+      <!-- <button
       class="bg-brand-blue1 text-brand-white rounded-md px-6 py-2.5 text-base font-semibold "
     >
       Записаться на прием
     </button> -->
-  </div>
+    </div>
 
-  <div class="mx-auto mb-12 flex w-max gap-2">
-    <!-- <button
+    <div class="mx-auto mb-12 flex w-max gap-2">
+      <!-- <button
       class="bg-brand-dark_blue text-brand-white rounded-md px-6 py-2.5 text-base font-semibold "
     >
       Записаться на прием
     </button> -->
-    <button
-      class="rounded-md bg-brand-dark_blue px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-blue"
-    >
-      Записаться на прием
-    </button>
-    <button
-      class="rounded-md bg-brand-dark_red px-6 py-3 text-base font-semibold text-brand-white"
-    >
-      Записаться на прием
-    </button>
-  </div>
+      <button
+        class="rounded-md bg-brand-dark_blue px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-blue"
+      >
+        Записаться на прием
+      </button>
+      <button
+        class="rounded-md bg-brand-dark_red px-6 py-3 text-base font-semibold text-brand-white"
+      >
+        Записаться на прием
+      </button>
+    </div>
 
-  <div class="mx-auto w-full max-w-7xl px-6 lg:px-10">
-    <div class="grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
-      <!-- first banner -->
+    <div class="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
       <div
-        class="relative row-span-2 flex h-[40rem] flex-col justify-end space-y-6 bg-[url('/med/images/dentist.png')] bg-contain bg-fixed bg-right p-12 text-brand-white md:col-span-2"
+        class="grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
+      >
+        <!-- first banner -->
+        <!-- <div
+        class="relative row-span-2 flex h-[40rem] flex-col justify-end space-y-6 bg-[url('/med/images/dentist.png')] bg-contain bg-fixed bg-right p-12 text-brand-white shadow-md md:col-span-2"
       >
         <div class="absolute inset-0 z-10 bg-brand-dark_blue/80"></div>
         <h2 class="relative z-20 text-3xl font-bold">Стоматология КГМУ</h2>
@@ -120,7 +239,7 @@ const features = [
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="size-[26px] transition-colors duration-300 group-hover:text-brand-actual_red"
+              class="size-[23px] transition-colors duration-300 group-hover:text-brand-actual_red"
             >
               <path d="m15 18-6-6 6-6"></path>
             </svg>
@@ -138,53 +257,115 @@ const features = [
               stroke-width="1.5"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="size-[26px] transition-colors duration-300 group-hover:text-brand-actual_red"
+              class="size-[23px] transition-colors duration-300 group-hover:text-brand-actual_red"
             >
               <path d="m9 18 6-6-6-6"></path>
             </svg>
           </button>
         </div>
+      </div> -->
+
+        <div
+          class="relative row-span-2 flex h-[40rem] flex-col justify-start gap-8 bg-[url('/med/images/hero.jpg')] bg-cover bg-center p-12 text-brand-white shadow-md md:col-span-2"
+        >
+          <div class="absolute inset-0 z-10 bg-brand-dark_blue/70"></div>
+          <div class="absolute inset-0 z-[9] bg-brand-gray/30"></div>
+          <h2 class="relative z-20 text-5xl font-bold leading-tight">
+            Университетская клиника <span class="block"
+              >Курского Государственного Медицинского Университета</span
+            >
+          </h2>
+          <!-- <p class="relative z-20 max-w-[60%] text-xl font-medium">
+          Университетская клиника КГМУ
+        </p> -->
+          <button
+            class="relative z-20 max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-actual_red/90"
+          >
+            Записаться на приём
+          </button>
+        </div>
+
+        <!-- first services -->
+        {
+          services.map((service) => (
+            <div class="group transform space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary shadow-md transition-all duration-300 will-change-transform hover:-translate-y-1 hover:translate-x-1 hover:bg-brand-dark_blue hover:text-brand-white">
+              <span class="block size-8 transition-all duration-300 *:text-brand-actual_red group-hover:*:text-brand-white">
+                <Fragment class="size-full" set:html={service.icon} />
+              </span>
+              <h3 class="text-xl font-bold">{service.name}</h3>
+              <p class="text-sm font-medium">{service.description}</p>
+            </div>
+          ))
+        }
       </div>
 
-      <!-- first services -->
-      {
-        services.map((service) => (
-          <div class="group space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary transition-all duration-300 hover:bg-brand-dark_blue hover:text-brand-white">
-            <span class="block size-8 transition-all duration-300 *:text-brand-actual_red group-hover:*:text-brand-white">
-              <Fragment class="size-full" set:html={service.icon} />
-            </span>
-            <h3 class="text-xl font-bold">{service.name}</h3>
-            <p class="text-sm font-medium">{service.description}</p>
-          </div>
-        ))
-      }
-    </div>
-
-    <div
-      class="mt-5 grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
-    >
-      <!-- features -->
-      {
-        features.map((feature) => (
-          <div
-            class:list={[
-              "group flex flex-col justify-around space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary transition-all duration-300",
-              { "col-span-2": feature.fullWidth },
-            ]}
-          >
-            {/* <span class="*:text-brand-actual_red group-hover:*:text-brand-white block size-8 transition-all duration-300">
+      <div
+        class="mt-5 grid size-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4"
+      >
+        <!-- features -->
+        {
+          features.map((feature) => (
+            <div
+              class:list={[
+                "group flex transform flex-col justify-around space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary shadow-md transition-all duration-300 will-change-transform hover:-translate-y-1 hover:translate-x-1",
+                { "col-span-2": feature.fullWidth },
+              ]}
+            >
+              {/* <span class="*:text-brand-actual_red group-hover:*:text-brand-white block size-8 transition-all duration-300">
               <Fragment class="size-full" set:html={feature.icon} />
             </span> */}
-            <h3 class="text-xl font-bold">{feature.name}</h3>
-            <p class="text-sm font-medium">{feature.description}</p>
-            <div class="flex w-full justify-end">
-              <button
-                class:list={[
-                  "inline-flex items-center justify-center whitespace-nowrap rounded-md border border-zinc-950/10 bg-inherit p-2 text-sm font-medium shadow-md transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-zinc-200 focus:ring-offset-0 active:bg-zinc-50",
-                  feature.buttonColor,
-                ]}
-              >
-                <svg
+              <h3 class="text-xl font-bold">{feature.name}</h3>
+              <p class="text-sm font-medium">{feature.description}</p>
+              <div class="flex w-full justify-end">
+                <button
+                  class:list={[
+                    "inline-flex size-[42px] items-center justify-center whitespace-nowrap rounded-md border border-zinc-950/10 bg-inherit p-2.5 text-sm font-medium shadow-md transition-colors duration-300 focus:outline-none focus:ring-1 focus:ring-zinc-200 focus:ring-offset-0 active:bg-zinc-50",
+                    feature.buttonColor,
+                  ]}
+                >
+                  {/* <svg
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-[23px] transition-all duration-300 group-hover:hidden"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25"
+                  />
+                </svg> */}
+
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="hidden size-full text-white transition-all duration-300 group-hover:block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-full transition-all duration-300 group-hover:hidden"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                    />
+                  </svg>
+
+                  {/* <svg
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -194,60 +375,105 @@ const features = [
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   class:list={[
-                    "size-[26px] transition-colors duration-300 group-hover:text-white",
+                    "size-[23px] transition-colors duration-300 group-hover:text-white",
                   ]}
                 >
                   <path d="m9 18 6-6-6-6" />
-                </svg>
-              </button>
+                </svg> */}
+                </button>
+              </div>
+            </div>
+          ))
+        }
+
+        <!-- second banner -->
+        <div
+          class="justify-top text-brand-black group relative row-span-2 flex h-[40rem] flex-col gap-8 overflow-hidden rounded-md bg-brand-gray p-12 shadow-md md:col-span-2 md:col-start-3 md:row-start-1"
+        >
+          <span
+            class="absolute right-6 top-6 z-20 size-4 rounded-full bg-white transition-colors duration-300 group-hover:bg-brand-actual_red"
+          ></span>
+          <span
+            class="absolute left-6 top-6 z-20 size-4 rounded-full bg-white transition-colors duration-300 group-hover:bg-brand-actual_red"
+          >
+          </span>
+
+          <span
+            class="absolute bottom-6 left-6 z-20 size-4 rounded-full bg-white transition-colors duration-300 group-hover:bg-brand-actual_red"
+          ></span>
+          <span
+            class="absolute bottom-6 right-6 z-20 size-4 rounded-full bg-white transition-colors duration-300 group-hover:bg-brand-actual_red"
+          ></span>
+
+          <div
+            class="absolute bottom-0 right-0 z-[9] h-[50%] w-[40%] translate-x-[50%] translate-y-[10%] -rotate-[35deg] bg-white"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 right-0 z-10 h-[50%] w-[50%] translate-x-[30%] translate-y-[50%] -rotate-[20deg] bg-brand-blue"
+          >
+          </div>
+          <h2 class="relative z-20 text-5xl font-bold">
+            Медицинские услуги высочайшего уровня
+          </h2>
+          <p class="relative z-20 text-pretty text-xl font-medium">
+            Университетская клиника создана для того, чтобы обеспечивая высокий
+            уровень образования, нести людям качественную медицину для
+            обеспечения здоровья, красоты, комфортной жизни и полноценного
+            долголетия.
+          </p>
+          <button
+            class="relative z-20 max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-dark_blue"
+          >
+            Заказать обратный звонок
+          </button>
+        </div>
+      </div>
+
+      <div class="h-12"></div>
+      <!-- testimonial -->
+      <div
+        class="grid text-brand-text-primary md:grid-cols-2 md:gap-16 md:pt-24 lg:gap-24"
+      >
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/med/images/rector.png"
+            class="rounded-md object-cover"
+            alt=""
+          />
+        </div>
+        <div class="pr-[30px]">
+          <div class="mb-10 pt-16 font-vibes text-4xl md:mb-6 md:pt-10">
+            Слово от нашего руководителя
+          </div>
+          <div
+            class="text-pretty border-l pl-12 font-lobster text-3xl leading-snug tracking-wider"
+          >
+            <span class="text-brand-blue">Университетская клиника</span> – современный
+            многопрофильный медицинский центр в составе Курского государственного
+            медицинского университета. Это мощная команда квалифицированных специалистов,
+            докторов и кандидатов медицинских наук, врачей с большим клиническим
+            опытом, подкрепленная современным диагностическим оборудованием, работающая
+            на благо и здоровье пациента.
+          </div>
+          <div class="mt-6 flex w-full justify-between md:mt-20">
+            <img src="/public/med/icons/image.png" class="size-16" alt="" />
+            <img
+              src="/public/med/images/signature.png"
+              class="h-16 w-auto"
+              alt=""
+            />
+            <div class="flex flex-col border-l pl-6">
+              <div class="text-xl font-bold text-brand-blue">
+                Лазаренко В.А.
+              </div>
+              <div class="text-sm font-medium">Ректор КГМУ</div>
             </div>
           </div>
-        ))
-      }
-
-      <!-- second banner -->
-      <div
-        class="justify-top text-brand-black group relative row-span-2 flex h-[40rem] flex-col gap-8 overflow-hidden rounded-md bg-brand-gray p-12 md:col-span-2 md:col-start-3 md:row-start-1"
-      >
-        <span
-          class="transition-colors duration-300 absolute right-6 top-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
-        ></span>
-        <span
-          class="transition-colors duration-300 absolute left-6 top-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
-        >
-        </span>
-
-        <span
-          class="transition-colors duration-300 absolute bottom-6 left-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
-        ></span>
-        <span
-          class="transition-colors duration-300 absolute bottom-6 right-6 z-20 size-4 rounded-full bg-white group-hover:bg-brand-actual_red"
-        ></span>
-
-        <div
-          class="absolute bottom-0 right-0 z-[9] h-[50%] w-[40%] translate-x-[50%] translate-y-[10%] -rotate-[35deg] bg-white"
-        >
         </div>
-        <div
-          class="absolute bottom-0 right-0 z-10 h-[50%] w-[50%] translate-x-[30%] translate-y-[50%] -rotate-[20deg] bg-brand-dark_blue"
-        >
-        </div>
-        <h2 class="relative z-20 text-5xl font-bold">
-          Медицинские услуги высочайшего уровня
-        </h2>
-        <p class="relative z-20 text-pretty text-xl font-medium">
-          Университетская клиника создана для того, чтобы обеспечивая высокий
-          уровень образования, нести людям качественную медицину для обеспечения
-          здоровья, красоты, комфортной жизни и полноценного долголетия.
-        </p>
-        <button
-          class="relative z-20 max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-dark_blue"
-        >
-          Записаться на приём
-        </button>
       </div>
     </div>
-  </div>
 
-  <div class="h-[2500px]"></div>
+    <div class="h-[250px]"></div>
+  </div>
 </Base>
