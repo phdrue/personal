@@ -63,8 +63,38 @@ const features = [
   <span class="text-brand-actual_red hover:text-brand-actual_red"></span>
   <span class="text-brand-blue hover:text-brand-blue"></span>
 
+  <div class="mx-auto my-64 flex w-[800px] gap-8">
+    <a
+      href="#"
+      class="relative block h-12 max-w-max overflow-hidden text-base font-semibold text-brand-white transition-all"
+    >
+      <div class="group">
+        <!-- upper body -->
+        <span class="block rounded-md bg-brand-actual_red px-6 py-3">
+          <p
+            class="group transition-all duration-700 will-change-transform group-hover:-translate-y-[200%]"
+          >
+            Записаться на приём
+          </p>
+        </span>
+        <!-- lower body -->
+        <span
+          class="block rounded-[50%] bg-brand-dark_blue px-6 py-3 transition-all duration-700 will-change-transform group-hover:-translate-y-full group-hover:rounded-md"
+        >
+          <p>Записаться на приём</p>
+        </span>
+      </div>
+    </a>
+
+    <button
+      class="relative z-20 max-h-max max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-actual_red/90"
+    >
+      Записаться на приём
+    </button>
+  </div>
+
   <div class="mx-auto w-full max-w-screen-xl px-6 lg:px-10">
-    <p class="mb-12 text-3xl font-bold flex gap-2 items-center">
+    <p class="mb-12 flex items-center gap-2 text-3xl font-bold">
       Новости университета <svg
         width="44"
         height="44"
@@ -79,7 +109,8 @@ const features = [
         >
           <path d="M11 21h20v12"></path>
           <path d="M25.5 29l5.5 5.5 5.5-5.5"></path>
-        </g></svg>
+        </g></svg
+      >
     </p>
 
     <div class="grid grid-cols-3 gap-8">
@@ -278,15 +309,31 @@ const features = [
           <!-- <p class="relative z-20 max-w-[60%] text-xl font-medium">
           Университетская клиника КГМУ
         </p> -->
-          <button
-            class="relative z-20 max-w-max rounded-md bg-brand-actual_red px-6 py-3 text-base font-semibold text-brand-white transition-all hover:bg-brand-actual_red/90"
+          <a
+            href="#"
+            class="relative z-20 block h-12 max-w-max overflow-hidden text-base font-semibold text-brand-white transition-all"
           >
-            Записаться на приём
-          </button>
+            <div class="group">
+              <!-- upper body -->
+              <span class="block rounded-md bg-brand-actual_red px-6 py-3">
+                <p
+                  class="group transition-all duration-500 will-change-transform group-hover:-translate-y-[200%]"
+                >
+                  Записаться на приём
+                </p>
+              </span>
+              <!-- lower body -->
+              <span
+                class="block rounded-[50%] bg-brand-dark_blue px-6 py-3 transition-all duration-500 will-change-transform group-hover:-translate-y-full group-hover:rounded-md"
+              >
+                <p>Записаться на приём</p>
+              </span>
+            </div>
+          </a>
         </div>
 
-        <!-- first services -->
-        {
+        <!-- first services default hover effeect -->
+        <!-- {
           services.map((service) => (
             <div class="group transform space-y-4 rounded-md bg-brand-gray p-7 text-brand-text-primary shadow-md transition-all duration-300 will-change-transform hover:-translate-y-1 hover:translate-x-1 hover:bg-brand-dark_blue hover:text-brand-white">
               <span class="block size-8 transition-all duration-300 *:text-brand-actual_red group-hover:*:text-brand-white">
@@ -294,6 +341,22 @@ const features = [
               </span>
               <h3 class="text-xl font-bold">{service.name}</h3>
               <p class="text-sm font-medium">{service.description}</p>
+            </div>
+          ))
+        } -->
+
+        <!-- first services fancy hover effeect -->
+        {
+          services.map((service) => (
+            <div class="group relative flex flex-col items-center justify-between overflow-hidden rounded-md bg-brand-gray text-brand-text-primary shadow-md will-change-transform transition-all duration-700 hover:text-brand-white">
+              <div class="relative z-10 space-y-4 p-7">
+                <span class="block size-8">
+                  <Fragment class="size-full transition-all duration-700 text-brand-actual_red group-hover:text-brand-white" set:html={service.icon} />
+                </span>
+                <h3 class="text-xl font-bold">{service.name}</h3>
+                <p class="text-sm font-medium">{service.description}</p>
+              </div>
+              <div class="absolute bottom-0 z-0 size-0 translate-y-[50%] rounded-full bg-brand-dark_blue transition-all duration-700 group-hover:size-[300%]" />
             </div>
           ))
         }
