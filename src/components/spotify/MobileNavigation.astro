@@ -1,0 +1,63 @@
+---
+import MobileNavigationButton from "./MobileNavigationButton.astro";
+---
+
+<nav
+  class="fixed bottom-0 h-[90px] z-[99] w-full bg-gradient-to-t from-[#111111] via-[#111111]/85 via-[57%]"
+>
+  <div
+    class="flex h-full items-center justify-center gap-10 self-center text-xs"
+  >
+    <MobileNavigationButton text="Главная">
+      <i slot="icon" class="flex size-[40px] items-center justify-center p-1.5">
+        <svg
+          class="size-full group-hover:fill-[#160707]"
+          fill="#898989"
+          viewBox="0 0 256 256"
+          ><path
+            d="M224,120v96a8,8,0,0,1-8,8H160a8,8,0,0,1-8-8V164a4,4,0,0,0-4-4H108a4,4,0,0,0-4,4v52a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V120a16,16,0,0,1,4.69-11.31l80-80a16,16,0,0,1,22.62,0l80,80A16,16,0,0,1,224,120Z"
+          ></path></svg
+        >
+      </i>
+    </MobileNavigationButton>
+
+    <MobileNavigationButton text="Новости">
+      <i slot="icon" class="flex size-[40px] items-center justify-center p-1.5">
+        <svg
+          class="size-full group-hover:fill-[#E0E0E0]"
+          fill="#898989"
+          viewBox="0 0 256 256"
+          ><path
+            d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40ZM64,92a8,8,0,0,1-16,0V80a8,8,0,0,1,8-8h72a8,8,0,0,1,8,8V92a8,8,0,0,1-16,0V88H100v48h4a8,8,0,0,1,0,16H80a8,8,0,0,1,0-16h4V88H64Zm136,92H80a8,8,0,0,1,0-16H200a8,8,0,0,1,0,16Zm0-32H136a8,8,0,0,1,0-16h64a8,8,0,0,1,0,16Zm0-32H152a8,8,0,0,1,0-16h48a8,8,0,0,1,0,16Z"
+          ></path></svg
+        >
+      </i>
+    </MobileNavigationButton>
+
+    <MobileNavigationButton text="Оценки">
+      <i slot="icon" class="flex size-[40px] items-center justify-center p-1.5">
+        <svg
+          class="size-full group-hover:fill-[#E0E0E0]"
+          fill="#898989"
+          viewBox="0 0 256 256"
+          ><path
+            d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z"
+          ></path></svg
+        >
+      </i>
+    </MobileNavigationButton>
+
+    <MobileNavigationButton text="Профиль">
+      <i slot="icon" class="flex size-[40px] items-center justify-center p-1.5">
+        <svg
+          class="size-full group-hover:fill-[#E0E0E0]"
+          fill="#898989"
+          viewBox="0 0 256 256"
+          ><path
+            d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
+          ></path></svg
+        >
+      </i>
+    </MobileNavigationButton>
+  </div>
+</nav>

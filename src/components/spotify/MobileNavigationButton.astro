@@ -1,0 +1,12 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<button class="group flex flex-col text-xs font-medium text-[#898989] items-center justify-center">
+  <slot name="icon" />
+  <span class="group-hover:text-[#E0E0E0] block">{text}</span>
+</button>
