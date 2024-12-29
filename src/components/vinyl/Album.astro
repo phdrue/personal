@@ -1,0 +1,15 @@
+---
+import Record from "./Record.astro";
+
+const albumName = "/img/albums/album6.webp";
+---
+
+<div
+  class="group grid aspect-[calc(1/1)] h-96 grid-cols-1 grid-rows-1 place-items-center border-2 border-white shadow-[0px_6px_12px_0px_rgba(128,0,128,0.6)]"
+>
+  <Record albumName={albumName} />
+  <!-- z-20 -->
+  <picture class="z-20 col-start-1 row-start-1 size-full bg-red-400">
+    <img src={albumName} class="size-full" alt="" />
+  </picture>
+</div>

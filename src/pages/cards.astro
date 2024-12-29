@@ -1,5 +1,8 @@
 ---
 import Base from "../layouts/Base.astro";
+
+// vinyl
+import Album from "../components/vinyl/Album.astro";
 ---
 
 <Base>
@@ -30,18 +33,18 @@ import Base from "../layouts/Base.astro";
           </div>
         </template>
         <template x-if="toggle">
-            <div
-              class="relative z-[1] -mx-0 my-6 flex aspect-[calc(3/4)] h-44 -rotate-12 flex-col items-center justify-between rounded-lg border border-zinc-950/20 bg-white opacity-50 py-6 transition-all will-change-transform hover:z-10 hover:-translate-y-3"
+          <div
+            class="relative z-[1] -mx-0 my-6 flex aspect-[calc(3/4)] h-44 -rotate-12 flex-col items-center justify-between rounded-lg border border-zinc-950/20 bg-white py-6 opacity-50 transition-all will-change-transform hover:z-10 hover:-translate-y-3"
+          >
+            <svg viewBox="0 0 256 256" class="size-12"
+              ><rect width="256" height="256" fill="none"></rect><path
+                fill="red"
+                d="M240,128a15.85,15.85,0,0,1-4.67,11.28l-96.05,96.06a16,16,0,0,1-22.56,0h0l-96-96.06a16,16,0,0,1,0-22.56l96.05-96.06a16,16,0,0,1,22.56,0l96.05,96.06A15.85,15.85,0,0,1,240,128Z"
+              ></path></svg
             >
-              <svg viewBox="0 0 256 256" class="size-12"
-                ><rect width="256" height="256" fill="none"></rect><path
-                  fill="red"
-                  d="M240,128a15.85,15.85,0,0,1-4.67,11.28l-96.05,96.06a16,16,0,0,1-22.56,0h0l-96-96.06a16,16,0,0,1,0-22.56l96.05-96.06a16,16,0,0,1,22.56,0l96.05,96.06A15.85,15.85,0,0,1,240,128Z"
-                ></path></svg
-              >
-              <p class="text-5xl font-bold">2</p>
-            </div>
-          </template>
+            <p class="text-5xl font-bold">2</p>
+          </div>
+        </template>
 
         <div
           class="relative z-[2] -mx-3 my-1.5 flex aspect-[calc(3/4)] h-44 -rotate-6 flex-col items-center justify-between rounded-lg border border-zinc-950/20 bg-white py-6 transition-all will-change-transform hover:z-10 hover:-translate-y-3"
@@ -87,7 +90,7 @@ import Base from "../layouts/Base.astro";
         </div>
       </div>
     </div>
-    <div class="mx-auto w-max p-24 h-96">
+    <div class="mx-auto h-96 w-max p-24">
       <template x-if="toggle">
         <div
           @click="fun"
@@ -103,6 +106,12 @@ import Base from "../layouts/Base.astro";
           <p class="text-5xl font-bold">2</p>
         </div>
       </template>
+    </div>
+  </div>
+
+  <div class="bg-blue-50 py-44">
+    <div class="mx-auto w-max">
+      <Album />
     </div>
   </div>
 </Base>
