@@ -1,15 +1,32 @@
 ---
 import Record from "./Record.astro";
+// https://hinsto.com.au/products/small-vinyl-record-floating-display-shelf
 
-const albumName = "/img/albums/album6.webp";
+// const albumName = "/img/albums/album10.webp";
+interface Props {
+  albumName: string;
+}
+
+const { albumName } = Astro.props;
 ---
 
 <div
-  class="group grid aspect-[calc(1/1)] h-96 grid-cols-1 grid-rows-1 place-items-center border-2 border-white shadow-[0px_6px_12px_0px_rgba(128,0,128,0.6)]"
+  id="tilt"
+  class="shadow-[10px_10px_10px_1px_rgba(0,_0,_0,_0.35)] group grid aspect-[calc(1/1)] h-72 grid-cols-1 grid-rows-1 place-items-center [transform:_perspective(1000px)_rotateX(0deg)_rotateY(0deg)_rotateZ(0deg);]"
 >
+  <!-- vinyl -->
   <Record albumName={albumName} />
-  <!-- z-20 -->
+
+  <!-- album cover -->
   <picture class="z-20 col-start-1 row-start-1 size-full bg-red-400">
     <img src={albumName} class="size-full" alt="" />
   </picture>
+
+  <!-- wood -->
+  <!-- <picture class="self-end z-30 col-start-1 row-start-1 h-[5%] w-[25%] translate-y-1/2">
+    <img src="/img/textures/wood.jpg" class="size-full" alt="" />
+  </picture> -->
+
+
+  <!-- z-20 shadow-[0px_6px_12px_0px_rgba(128,0,128,0.6)] -->
 </div>

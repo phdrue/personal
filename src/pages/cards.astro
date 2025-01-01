@@ -3,9 +3,15 @@ import Base from "../layouts/Base.astro";
 
 // vinyl
 import Album from "../components/vinyl/Album.astro";
+
+import GridableAlbum from "../components/vinyl/GridableAlbum.astro";
 ---
 
 <Base>
+  <!-- <script>
+    import "../assets/scripts/albumTilt";
+  </script> -->
+
   <div
     x-cloak
     x-data="{ toggle: false, fun() {
@@ -109,9 +115,20 @@ import Album from "../components/vinyl/Album.astro";
     </div>
   </div>
 
-  <div class="bg-blue-50 py-44">
-    <div class="mx-auto w-max">
-      <Album />
+  <div class="bg-[url('/img/textures/wall.jpg')] bg-zinc-200 bg-blend-multiply py-44">
+    <div class="grid grid-cols-3 max-w-7xl mx-auto gap-16">
+      <Album albumName="/img/albums/album6.webp"/>
+      <Album albumName="/img/albums/album8.webp"/>
+      <Album albumName="/img/albums/album10.webp"/>
+      <Album albumName="/img/albums/album3.webp"/>
+      <Album albumName="/img/albums/album4.webp"/>
+      <Album albumName="/img/albums/album5.webp"/>
     </div>
   </div>
+
+  <div class="mx-auto w-max bg-black p-24">
+    <GridableAlbum albumName="/img/albums/album5.webp"/>
+  </div>
+
+  
 </Base>
