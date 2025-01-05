@@ -1,0 +1,54 @@
+{
+    "albums": [
+        {
+            "img": "/img/albums/album1.png",
+            "artist": "Dagny",
+            "name": "Strangers/Lovers"
+        },
+        {
+            "img": "/img/albums/album2.webp",
+            "artist": "Benjamin Ingrosso",
+            "name": "Look Who's Laughing Now"
+        },
+        {
+            "img": "/img/albums/album3.webp",
+            "artist": "Olivia Rodrigo",
+            "name": "SOUR"
+        },
+        {
+            "img": "/img/albums/album5.webp",
+            "artist": "Ava Max",
+            "name": "Heaven & Hell"
+        },
+        {
+            "img": "/img/albums/album4.webp",
+            "artist": "Gracie Abrams",
+            "name": "This is What it Feels Like"
+        },
+        {
+            "img": "/img/albums/album6.webp",
+            "artist": "Maisie Peters",
+            "name": "The Good Witch"
+        },
+        {
+            "img": "/img/albums/album7.webp",
+            "artist": "Sigrid",
+            "name": "How To Let Go"
+        },
+        {
+            "img": "/img/albums/album8.webp",
+            "artist": "Faouzia",
+            "name": "Hero"
+        },
+        {
+            "img": "/img/albums/album9.webp",
+            "artist": "Camila Cabello",
+            "name": "Camila"
+        },
+        {
+            "img": "/img/albums/album10.webp",
+            "artist": "Gracie Abrams",
+            "name": "The Secret Of Us"
+        }
+    ]
+}
